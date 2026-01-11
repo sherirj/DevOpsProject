@@ -2,7 +2,7 @@ name: Deploy React App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,8 @@ jobs:
 
       - uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./my-vite-app
+          file: ./my-vite-app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my-vite-app:latest
 
