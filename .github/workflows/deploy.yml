@@ -19,7 +19,7 @@ jobs:
       - uses: docker/build-push-action@v4
         with:
           context: ./my-vite-app
-          file: ./my-vite-app/Dockerfile
+          file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my-vite-app:latest
 
